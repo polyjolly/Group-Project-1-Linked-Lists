@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
-
+#include "Client.h"
+#include "Client_List.h"
 using namespace std;
 
 int DisplayMenu()
