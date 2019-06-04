@@ -1,4 +1,4 @@
-//Author: Matthew Petros
+//Author: Matthew Petros and John Greim
 //Date: 6/2/19
 //Purpose: Utilizes linked lists to allow clients to create savings & checking accounts and perform transactions with them.
 //		   Is able to display all information in the database and remove clients.
@@ -21,7 +21,7 @@ int mainMenu()
 		<<"5. Perform a transaction\n"
 		<<"6. Remove a client\n"
 		<<"7. Exit\n"
-		<<"Select an option: "<<endl;
+		<<"Select an option: ";
 	
 	cin>>choice;
 	return choice;

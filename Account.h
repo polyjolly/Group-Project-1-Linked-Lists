@@ -1,6 +1,7 @@
 //Account.h
 
 #include <string>
+#include "Client.h"
 using namespace std;
 
 #ifndef ACCOUNT_H
@@ -13,11 +14,8 @@ class Account
 		float balance;
 	public:
 		//Default constructor
-		Account()
-		{
-			accountID = "";
-			balance = 0;
-		}
+		Account();
+
 		//mutators
 		void setID(string ID);
 		void setBalance(float bal);
