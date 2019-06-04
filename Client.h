@@ -19,7 +19,10 @@ class Client
 		void setID(int ID);
 		//accessors
 		string getName();
-		string getID();
+		int getID();
+		
+		//Printing
+		void print();
 	
 	private:
 		string firstName;

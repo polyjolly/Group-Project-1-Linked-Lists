@@ -1,6 +1,7 @@
 //Client.cpp
 
 #include <string>
+#include <iostream>
 #include "Client.h"
 using namespace std;
 
@@ -28,4 +29,19 @@ void Client::setName(string fn, string ln)
 void Client::setID(int ID)
 {
 	clientID = ID;
+}
+
+string Client::getName()
+{
+	return firstName + " " + lastName;
+}
+
+int Client::getID()
+{
+	return clientID;
+}
+
+void Client::print()
+{
+	cout<<getID()<<".) "<<getName();
 }
