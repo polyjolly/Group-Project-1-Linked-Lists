@@ -4,6 +4,7 @@
 //		   Is able to display all information in the database and remove clients.
 
 #include <iostream>
+#include <cstdlib>
 #include <string>
 using namespace std;
 
