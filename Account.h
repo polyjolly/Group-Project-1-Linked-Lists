@@ -24,7 +24,7 @@ class Account
 	protected:
 		string accountID;
 		float balance;
-		Client cl;	
+		//Client cl;	
 	
 };
 #endif
