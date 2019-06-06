@@ -24,7 +24,7 @@ class Account
 		float getBalance(){return User_AccountBalance;}
 		//Transaction Functions
 		void Deposit(double Input_Deposit);
-		void Withdraw(double Input_Deposit);
+		void Withdraw(double Input_Withdraw);
 		//Printing
 		void print();
 		

@@ -25,23 +25,32 @@ void Account::setAccNum(int Input_AccountID)
 	User_AccountID = Input_AccountID;
 }
 
-void Account::setBalance(double Input_AccountBalance)
+void Account::setBalance(float Input_AccountBalance)
 {
 	User_AccountBalance = Input_AccountBalance;
 }
 
 void Account::Deposit(double Input_Deposit)
 {
-	double OldBalance = GetBalance();
-	setBalance(OldBalance + Input_Deposit)       
+	double OldBalance = getBalance();
+	setBalance(OldBalance + Input_Deposit);       
 }
 
-void Account::Withdraw()
+void Account::Withdraw(double Input_Withdraw)
+{
+	double OldBalance = getBalance();
+    if(OldBalance - Input_Withdraw < 0)
+	{
+        cout<<"Error Cannot Complete Transaction, Not Enough Funds!"<<endl;
+    }
+	else
+	{
+        setBalance(OldBalance - Input_Withdraw);
+    }
+}
+
+/*void Account::print()
 {
 	
 }
-
-void Account::print()
-{
-	
-}
+*/
