@@ -4,6 +4,7 @@
 #define CLIENT_H
 
 #include <string>
+#include <stdio.h>
 #include "Account.h"
 using namespace std;
 class Client

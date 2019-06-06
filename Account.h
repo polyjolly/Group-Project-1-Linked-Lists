@@ -1,28 +1,30 @@
 //Account.h
-
-#include <string>
-#include "Client.h"
-using namespace std;
-
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
 
+#include <string>
+#include <stdio.h>
+#include "Client.h"
+
+using namespace std;
 class Account
 {
-	private:
-		string accountID;
-		float balance;
+	
 	public:
 		//Default constructor
 		Account();
-
+		//Overloaded Constructor
 		//mutators
-		void setID(string ID);
+		void setAcc();
+		void setAccNum(string ID);
 		void setBalance(float bal);
 		//accessors
-		string getID();
-		float getBalance();
-		
+		int getAccountID(){return User_AccountID;}
+		float getBalance(){return User_AccountBalance;}
+	protected:
+		Client Cl;
+		int User_AccountID;
+		float User_AccountBalance;	
 	
 };
 #endif

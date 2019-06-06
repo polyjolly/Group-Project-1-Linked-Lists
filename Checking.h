@@ -7,7 +7,7 @@ using namespace std;
 #ifndef CHECKING_H
 #define CHECKING_H
 
-class Checking
+class Checking: public Account
 {
 	private:
 		//
