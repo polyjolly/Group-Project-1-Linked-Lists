@@ -19,12 +19,12 @@ class Account
 		void setAccNum(string ID);
 		void setBalance(float bal);
 		//accessors
-		string getID();
-		float getBalance();
+		int getAccountID(){return User_AccountID;}
+		float getBalance(){return User_AccountBalance;}
 	protected:
-		string accountID;
-		float balance;
-		//Client cl;	
+		Client Cl;
+		int User_AccountID;
+		float User_AccountBalance;	
 	
 };
 #endif

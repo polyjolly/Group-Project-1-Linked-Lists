@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o Account.o Client.o Checking.o Saving.o $(RES)
-LINKOBJ  = main.o Account.o Client.o Checking.o Saving.o $(RES)
+OBJ      = main.o Account.o Client.o Checking.o Saving.o Account_List.o $(RES)
+LINKOBJ  = main.o Account.o Client.o Checking.o Saving.o Account_List.o $(RES)
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -pg
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
@@ -39,3 +39,6 @@ Checking.o: Checking.cpp
 
 Saving.o: Saving.cpp
 	$(CPP) -c Saving.cpp -o Saving.o $(CXXFLAGS)
+
+Account_List.o: Account_List.cpp
+	$(CPP) -c Account_List.cpp -o Account_List.o $(CXXFLAGS)

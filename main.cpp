@@ -20,7 +20,7 @@ int mainMenu()
 		<<"4. View all savings accounts and their balances\n"
 		<<"5. Perform a transaction\n"
 		<<"6. Remove a client\n"
-		<<"7. Exit\n"
+		<<"7. Exit\n\n"
 		<<"Select an option: ";
 	
 	cin>>choice;
