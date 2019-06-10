@@ -23,10 +23,10 @@ class Account
 		int getAccountID(){return User_AccountID;}
 		float getBalance(){return User_AccountBalance;}
 		//Transaction Functions
-		void Deposit(double Input_Deposit);
-		void Withdraw(double Input_Withdraw);
+		virtual void Deposit(double Input_Deposit);
+		virtual void Withdraw(double Input_Withdraw);
 		//Printing
-		void print();
+		virtual void print();
 		
 	protected:
 		Client Cl;

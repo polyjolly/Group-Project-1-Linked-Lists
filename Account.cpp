@@ -49,8 +49,7 @@ void Account::Withdraw(double Input_Withdraw)
     }
 }
 
-/*void Account::print()
-{
-	
+void Account::print()
+{	
 }
-*/
+
