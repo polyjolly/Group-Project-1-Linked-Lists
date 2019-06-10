@@ -22,6 +22,8 @@ class Account_List{
     	void PrintAccountByClientID(int ClientID_In);
     	//Perform a Transaction
     	void HandleTransactionById(int ClientID_In);
+    	
+    	void ErrorNoClients();
 
 	private:
     	typedef struct account{

@@ -23,7 +23,7 @@ void Saving::Saving::setInterestRate(double Input_Rate)
 void Saving::Saving::print(){
     Cl.print();
     cout<<": Savings Account: ";
-    cout <<"$"<<getBalance()<<endl;
+    cout<<"$"<<getBalance()<<endl;
 }
 
 string Saving::AccountType()
@@ -40,9 +40,12 @@ void Saving::Deposit(double Input_Deposit)
 void Saving::Withdraw(double Input_Withdraw)
 {
     double OldBalance = getBalance();
-    if(OldBalance - Input_Withdraw < 0){
+    if(OldBalance - Input_Withdraw < 0)
+	{
         cout<<"Error Cannot Compleate Transaction Not Enough Funds"<<endl;
-    }else{//valid Transaction
+    }
+	else
+	{// If Valid Transaction
         setBalance(OldBalance - Input_Withdraw);
     }
 }
