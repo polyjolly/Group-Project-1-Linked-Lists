@@ -8,8 +8,10 @@
 
 class Account_List{
 	public:
-    	Account_List(){
+    	Account_List()
+		{
         	head = NULL;
+        	temp = NULL;
         	curr = NULL;
     	}
     	//Adding Account to Clients of Checking/Savings
@@ -19,19 +21,20 @@ class Account_List{
     	void PrintAllAccounts();
     	void PrintAllSavings();
     	void PrintAllChecking();
-    	void PrintAccountByClientID(int ClientID_In);
+    	void PrintAccountByClientID(int Input_ClientID);
     	//Perform a Transaction
-    	void HandleTransactionById(int ClientID_In);
+    	void HandleTransactionById(int Input_ClientID);
     	
     	void ErrorNoClients();
 
 	private:
     	typedef struct account{
         	Account* User_Account;
-        	account* next = NULL;
+        	Account* next = NULL;
     	}* AccountPTR;
     
     	AccountPTR head = NULL;
+    	AccountPTR temp = NULL;
     	AccountPTR curr = NULL;
 };
 
