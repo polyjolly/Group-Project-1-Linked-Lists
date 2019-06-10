@@ -2,7 +2,6 @@
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
 
-#include <string>
 #include <stdio.h>
 #include "Client.h"
 
@@ -14,7 +13,7 @@ class Account
 		//Default constructor
 		Account();
 		//Overloaded Constructor
-		Account(Client Input_Cl,int Input_AccountID,double Input_AccountBalance);
+		Account(Client Input_Cl, int Input_AccountID, double Input_AccountBalance);
 		//mutators
 		void setAcc(Client Input_Cl);
 		void setAccNum(int ID);
@@ -27,6 +26,7 @@ class Account
 		virtual void Withdraw(double Input_Withdraw);
 		//Printing
 		virtual void print();
+		virtual string AccountType();
 		
 	protected:
 		Client Cl;

@@ -49,7 +49,13 @@ void Account::Withdraw(double Input_Withdraw)
     }
 }
 
+string Account::AccountType()
+{
+     return "Account";
+}
+
 void Account::print()
 {	
+	
 }
 
