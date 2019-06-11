@@ -7,11 +7,11 @@
 #include "Saving.h"
 
 class Account_List{
+	
 	public:
     	Account_List()
 		{
         	head = NULL;
-        	temp = NULL;
         	curr = NULL;
     	}
     	//Adding Account to Clients of Checking/Savings
@@ -30,12 +30,11 @@ class Account_List{
 	private:
     	typedef struct account{
         	Account* User_Account;
-        	Account* next = NULL;
+        	account* next;
     	}* AccountPTR;
     
-    	AccountPTR head = NULL;
-    	AccountPTR temp = NULL;
-    	AccountPTR curr = NULL;
+    	AccountPTR head;
+    	AccountPTR curr;
 };
 
 #endif //ACCOUNT_LIST_H

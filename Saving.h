@@ -14,8 +14,6 @@ class Saving : public Account
 	public:
 		//Constructor 
 		Saving();
-		//Overloaded
-		Saving(Client Input_Cl,int Input_AccountID,double Input_AccountBalance, double Input_InterestRate);
 		//Mutator
 		void setInterestRate(double Input_Rate);
 		//Accessor

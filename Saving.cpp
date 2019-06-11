@@ -9,11 +9,6 @@ Saving::Saving()
 	SavingsInterestRate = InterestRate;
 }
 
-Saving::Saving(Client Input_Cl,int Input_AccountID,double Input_AccountBalance, double Input_InterestRate)
-{
-	Account(Input_Cl, Input_AccountID, Input_AccountBalance);
-	SavingsInterestRate = Input_InterestRate;
-}
 
 void Saving::Saving::setInterestRate(double Input_Rate)
 {
