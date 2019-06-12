@@ -5,8 +5,8 @@ Order=0,1,2,3,4,5,6,7,8,9,10
 Open=1
 Top=1
 CursorCol=17
-CursorRow=21
-TopLine=5
+CursorRow=48
+TopLine=25
 LeftChar=1
 [Editor_1]
 Open=1
@@ -25,8 +25,8 @@ LeftChar=1
 [Editor_3]
 Open=1
 Top=0
-CursorCol=1
-CursorRow=2
+CursorCol=11
+CursorRow=11
 TopLine=1
 LeftChar=1
 [Editor_4]

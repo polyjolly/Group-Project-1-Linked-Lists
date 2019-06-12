@@ -6,6 +6,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "Account_List.h"
 using namespace std;
 
 //Contains the main menu for the program
@@ -25,6 +26,61 @@ int mainMenu()
 	
 	cin>>choice;
 	return choice;
+}
+
+//Allows the user to add one or more clients and their accounts to the linked list
+void addClients()
+{
+	//Declare variables
+	Client newClient;
+	int choice = 0;
+	string firstName = "";
+	string lastName = "";
+	string clientID = "";
+	string accountID = "";
+	double balance = 0;
+	
+	//Continues to add clients and accounts to the linked list until the user chooses to stop
+	while (choice != 2)
+	{
+		system("CLS");
+		cout<<"Enter the client's first and last name: ";
+		cin>>firstName>>lastName;
+		newClient.setName(firstName, lastName);
+		cout<<"Enter the client's ID number: ";
+		cin>>clientID;
+		newClient.setID(clientID);
+		
+		cout<<"Does this client have a checking and/or savings account?\n"<<
+			<<"1. Checking/n"
+			<<"2. Savings/n"
+			<<"3. Both/n"
+			<<"Enter your choice: "<<endl;
+		cin>>choice;
+		
+		if (choice == 1 || choice == 3)
+		{
+			cout<<"Enter the ID of the checking account: ";
+			cin>>accountID;
+			cout<<"Enter the balance of the checking account: ";
+			cin>>balance;
+			Account_List.AddAccountChecking(newClient, accountID, balance);
+		}
+		else if (choice == 2 || choice == 3)
+		{
+			cout<<"Enter the ID of the savings account: ";
+			cin>>accountID;
+			cout<<"Enter the balance of the savings account: ";
+			cin>>balance;
+			Account_List.AddAccountSavings(newClient, accountID, balance);
+		}
+		
+		cout<<"Enter another client?/n"
+			<<"1. Yes/n"
+			<<"2. No/n"
+			<<"Enter your choice: "<<endl;
+		cin>>choice;
+	}
 }
 
 int main(int argc, char** argv) 
