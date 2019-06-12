@@ -9,6 +9,7 @@
 #include "Account_List.h"
 using namespace std;
 
+Account_List ClientDatabase;
 //Contains the main menu for the program
 int mainMenu()
 {
@@ -36,8 +37,8 @@ void addClients()
 	int choice = 0;
 	string firstName = "";
 	string lastName = "";
-	string clientID = "";
-	string accountID = "";
+	int clientID = 0;
+	int accountID = 0;
 	double balance = 0;
 	
 	//Continues to add clients and accounts to the linked list until the user chooses to stop
@@ -51,7 +52,7 @@ void addClients()
 		cin>>clientID;
 		newClient.setID(clientID);
 		
-		cout<<"Does this client have a checking and/or savings account?\n"<<
+		cout<<"Does this client have a checking and/or savings account?\n"
 			<<"1. Checking/n"
 			<<"2. Savings/n"
 			<<"3. Both/n"
@@ -64,7 +65,7 @@ void addClients()
 			cin>>accountID;
 			cout<<"Enter the balance of the checking account: ";
 			cin>>balance;
-			Account_List.AddAccountChecking(newClient, accountID, balance);
+			ClientDatabase.AddAccountChecking(newClient, accountID, balance);
 		}
 		else if (choice == 2 || choice == 3)
 		{
@@ -72,7 +73,7 @@ void addClients()
 			cin>>accountID;
 			cout<<"Enter the balance of the savings account: ";
 			cin>>balance;
-			Account_List.AddAccountSavings(newClient, accountID, balance);
+			ClientDatabase.AddAccountSavings(newClient, accountID, balance);
 		}
 		
 		cout<<"Enter another client?/n"
