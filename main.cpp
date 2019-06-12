@@ -6,8 +6,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "Account_List.h"
 using namespace std;
 
+Account_List ClientDatabase;
 //Contains the main menu for the program
 int mainMenu()
 {
@@ -35,8 +37,8 @@ void addClients()
 	int choice = 0;
 	string firstName = "";
 	string lastName = "";
-	string clientID = "";
-	string accountID = "";
+	int clientID = 0;
+	int accountID = 0;
 	double balance = 0;
 	
 	//Continues to add clients and accounts to the linked list until the user chooses to stop
@@ -44,39 +46,38 @@ void addClients()
 	{
 		system("CLS");
 		cout<<"Enter the client's first and last name: ";
-		cin>>firstname>>lastName;
+		cin>>firstName>>lastName;
 		newClient.setName(firstName, lastName);
 		cout<<"Enter the client's ID number: ";
 		cin>>clientID;
 		newClient.setID(clientID);
 		
-		cout<<"Does this client have a checking and/or savings account?\n"<<
-			<<"1. Checking/n"
-			<<"2. Savings/n"
-			<<"3. Both/n"
+		cout<<"Does this client have a checking and/or savings account?\n"
+			<<"1. Checking\n"
+			<<"2. Savings\n"
 			<<"Enter your choice: "<<endl;
 		cin>>choice;
 		
-		if (choice == 1 || choice == 3)
+		if (choice == 1)
 		{
 			cout<<"Enter the ID of the checking account: ";
 			cin>>accountID;
 			cout<<"Enter the balance of the checking account: ";
 			cin>>balance;
-			Account_List.AddAccountChecking(newClient, accountID, balance);
+			ClientDatabase.AddAccountChecking(newClient, accountID, balance);
 		}
-		else if (choice == 2 || choice == 3)
+		else if (choice == 2)
 		{
 			cout<<"Enter the ID of the savings account: ";
 			cin>>accountID;
 			cout<<"Enter the balance of the savings account: ";
 			cin>>balance;
-			Account_List.AddAccountSavings(newClient, accountID, balance);
+			ClientDatabase.AddAccountSavings(newClient, accountID, balance);
 		}
 		
-		cout<<"Enter another client?/n"
-			<<"1. Yes/n"
-			<<"2. No/n"
+		cout<<"Enter another client?\n"
+			<<"1. Yes\n"
+			<<"2. No\n"
 			<<"Enter your choice: "<<endl;
 		cin>>choice;
 	}
@@ -92,18 +93,18 @@ int main(int argc, char** argv)
 	{
 		choice = mainMenu();
 		
-		/*switch (choice) //Note: Functions shown have not been implemented yet, return "undeclared" errors
+		switch (choice) //Note: Functions shown have not been implemented yet, return "undeclared" errors
 		{
 			case 1: addClients(); break;
-			case 2: viewClients(); break;
-			case 3: viewCheckAccounts(); break;
-			case 4: viewSaveAccounts(); break;
-			case 5: transaction(); break;
-			case 6: removeClient(); break;
+			//case 2: viewClients(); break;
+			//case 3: viewCheckAccounts(); break;
+			//case 4: viewSaveAccounts(); break;
+			//case 5: transaction(); break;
+			//case 6: removeClient(); break;
 			case 7: exit (EXIT_SUCCESS); break;
 			default: cout<<"ERROR: Invalid Option.\n";
 		}
-		system("PAUSE"); */
+		system("PAUSE"); 
 	}
 	return 0;
 }
