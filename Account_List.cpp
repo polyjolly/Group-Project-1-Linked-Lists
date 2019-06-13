@@ -134,15 +134,17 @@ void Account_List::HandleTransactionById(int Input_ClientID)
 	if(head != NULL)
 	{
         curr = head;
+        
         while(curr != NULL)
 		{
-			cout<<"Hello Debug Loop\n";
-			
-            /*if(curr->User_Account->getAccountID() == Input_ClientID)
+			cout<<"Inside While Loop";
+
+            if(curr->User_Account->getAccountID() == Input_ClientID)
 			{
+				cout<<"Inside IF";
                 int TempOption;
                 cout<<"You Currently Have $"<<curr->User_Account->getBalance()<<endl<<"Do you Want to make a"<<endl;
-                cout<<"1.) Despoit"<<endl<<"2.) Withdraw"<<endl<<"Choice: ";
+                cout<<"1.) Deposit"<<endl<<"2.) Withdraw"<<endl<<"Choice: ";
                 cin>>TempOption;
                 if(TempOption == 1)
 				{
@@ -159,7 +161,7 @@ void Account_List::HandleTransactionById(int Input_ClientID)
                     curr->User_Account->Withdraw(TempDeposit);
                 }
             }
-            */curr = curr->next;
+            curr = curr->next;
         }
     }
 	else

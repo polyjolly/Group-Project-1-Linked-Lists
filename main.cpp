@@ -56,7 +56,8 @@ void addClients()
 		cout<<"Does this client have a checking and/or savings account?\n"
 			<<"1. Checking\n"
 			<<"2. Savings\n"
-			<<"Enter your choice: "<<endl;
+			<<"3. Both\n"
+			<<"Enter your choice: ";
 		cin>>choice;
 		
 		if (choice == 1)
@@ -111,6 +112,7 @@ void transaction()
 	cout<<"============= Select A Client ID To Do a New Transaction ============="<<endl;
     ClientDatabase.PrintAllAccounts();
     int TempClientID;
+    cout<<"Enter A Client: ";
     cin>>TempClientID;
     ClientDatabase.HandleTransactionById(TempClientID);
 }
@@ -137,7 +139,7 @@ int main(int argc, char** argv)
 			case 7: exit (EXIT_SUCCESS); break;
 			default: cout<<"ERROR: Invalid Option.\n";
 		}
-		//system("PAUSE"); 
+		system("PAUSE"); 
 	}
 	return 0;
 }
