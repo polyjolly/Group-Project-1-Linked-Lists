@@ -10,6 +10,7 @@
 using namespace std;
 
 Account_List ClientDatabase;
+
 //Contains the main menu for the program
 int mainMenu()
 {
@@ -83,6 +84,38 @@ void addClients()
 	}
 }
 
+//Prints Clients to Screen
+void viewClients()
+{
+	cout<<"============= List Of all Clients In Database ============="<< endl;
+	ClientDatabase.PrintAllAccounts();
+	cout<<"==========================================================="<< endl;
+}
+
+void viewCheckAccounts()
+{
+	cout<<"============= List Of all Checking Accounts In Database ============="<< endl;
+    ClientDatabase.PrintAllChecking();
+    cout<<"==========================================================="<< endl;
+}
+
+void viewSaveAccounts()
+{
+	cout<<"============= List Of all Savings Accounts In Database ============="<< endl;
+    ClientDatabase.PrintAllSavings();
+    cout<<"==========================================================="<< endl;
+}
+
+void transaction()
+{
+	cout<<"============= Select A Client ID To Do a New Transaction ============="<<endl;
+    ClientDatabase.PrintAllAccounts();
+    int TempClientID;
+    cin>>TempClientID;
+    ClientDatabase.HandleTransactionById(TempClientID);
+}
+
+
 int main(int argc, char** argv) 
 {
 	//Declare variables
@@ -93,13 +126,13 @@ int main(int argc, char** argv)
 	{
 		choice = mainMenu();
 		
-		switch (choice) //Note: Functions shown have not been implemented yet, return "undeclared" errors
+		switch (choice) 
 		{
 			case 1: addClients(); break;
-			//case 2: viewClients(); break;
-			//case 3: viewCheckAccounts(); break;
-			//case 4: viewSaveAccounts(); break;
-			//case 5: transaction(); break;
+			case 2: viewClients(); break;
+			case 3: viewCheckAccounts(); break;
+			case 4: viewSaveAccounts(); break;
+			case 5: transaction(); break;
 			//case 6: removeClient(); break;
 			case 7: exit (EXIT_SUCCESS); break;
 			default: cout<<"ERROR: Invalid Option.\n";
