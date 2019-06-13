@@ -137,7 +137,7 @@ int main(int argc, char** argv)
 			case 7: exit (EXIT_SUCCESS); break;
 			default: cout<<"ERROR: Invalid Option.\n";
 		}
-		system("PAUSE"); 
+		//system("PAUSE"); 
 	}
 	return 0;
 }

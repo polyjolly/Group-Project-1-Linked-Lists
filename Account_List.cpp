@@ -136,7 +136,9 @@ void Account_List::HandleTransactionById(int Input_ClientID)
         curr = head;
         while(curr != NULL)
 		{
-            if(curr->User_Account->getAccountID() == Input_ClientID)
+			cout<<"Hello Debug Loop\n";
+			
+            /*if(curr->User_Account->getAccountID() == Input_ClientID)
 			{
                 int TempOption;
                 cout<<"You Currently Have $"<<curr->User_Account->getBalance()<<endl<<"Do you Want to make a"<<endl;
@@ -157,7 +159,7 @@ void Account_List::HandleTransactionById(int Input_ClientID)
                     curr->User_Account->Withdraw(TempDeposit);
                 }
             }
-            curr = curr->next;
+            */curr = curr->next;
         }
     }
 	else
@@ -172,6 +174,4 @@ void Account_List::ErrorNoClients()
     cout<<"================= Error ================="<<endl;
     cout<<"There Are Currently No Clients In the Database"<<endl;
     system("PAUSE");
-    string temp;
-    cin>>temp;
 }
