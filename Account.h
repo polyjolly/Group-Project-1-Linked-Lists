@@ -21,6 +21,7 @@ class Account
 		//accessors
 		int getAccountID(){return User_AccountID;}
 		float getBalance(){return User_AccountBalance;}
+		string getClientName(){return Cl.getName();}
 		//Transaction Functions
 		virtual void Deposit(double Input_Deposit);
 		virtual void Withdraw(double Input_Withdraw);

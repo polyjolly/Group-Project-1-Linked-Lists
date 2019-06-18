@@ -24,6 +24,8 @@ class Account_List{
     	void PrintAccountByClientID(int Input_ClientID);
     	//Perform a Transaction
     	void HandleTransactionById(int Input_ClientID);
+    	//Remove a client
+    	void removeClient(int Input_ClientID);
     	
     	void ErrorNoClients();
 

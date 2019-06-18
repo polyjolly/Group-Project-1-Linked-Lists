@@ -52,6 +52,7 @@ void Account_List::AddAccountChecking(Client Input_Client,int Input_AccountNumbe
     }
 }
 
+//Prints the account ID, balance, and client name for each account
 void Account_List::PrintAllAccounts()
 {
 	if(head != NULL)
@@ -59,7 +60,7 @@ void Account_List::PrintAllAccounts()
         curr = head;
         while(curr != NULL)
 		{
-            curr->User_Account->print();
+            cout<<curr->User_Account->getAccountID()<<".) "<<curr->User_Account->getClientName()<<": $"<<curr->User_Account->getBalance()<<endl;
             curr = curr->next;
         }
     }
@@ -131,11 +132,13 @@ void Account_List::PrintAccountByClientID(int Input_ClientID)
 
 void Account_List::HandleTransactionById(int Input_ClientID)
 {
+	
 	if(head != NULL)
 	{
         curr = head;
         while(curr != NULL)
 		{
+			
             if(curr->User_Account->getAccountID() == Input_ClientID)
 			{
                 int TempOption;
@@ -159,6 +162,28 @@ void Account_List::HandleTransactionById(int Input_ClientID)
             }
             curr = curr->next;
         }
+       
+    }
+	else
+	{
+    	ErrorNoClients();
+    }
+}
+
+void Account_List::removeClient(int Input_ClientID)
+{
+	if(head != NULL)
+	{
+        curr = head;
+        while(curr != NULL)
+		{
+			if(curr->User_Account->getAccountID() == Input_ClientID)
+			{
+				
+			}
+            
+			curr = curr->next;
+        }
     }
 	else
 	{
@@ -172,6 +197,4 @@ void Account_List::ErrorNoClients()
     cout<<"================= Error ================="<<endl;
     cout<<"There Are Currently No Clients In the Database"<<endl;
     system("PAUSE");
-    string temp;
-    cin>>temp;
 }

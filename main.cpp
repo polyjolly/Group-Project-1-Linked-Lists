@@ -10,6 +10,7 @@
 using namespace std;
 
 Account_List ClientDatabase;
+
 //Contains the main menu for the program
 int mainMenu()
 {
@@ -55,22 +56,23 @@ void addClients()
 		cout<<"Does this client have a checking and/or savings account?\n"
 			<<"1. Checking\n"
 			<<"2. Savings\n"
+			<<"3. Both\n"
 			<<"Enter your choice: "<<endl;
 		cin>>choice;
 		
-		if (choice == 1)
+		if (choice == 1 || choice == 3)
 		{
 			cout<<"Enter the ID of the checking account: ";
 			cin>>accountID;
-			cout<<"Enter the balance of the checking account: ";
+			cout<<"Enter the initial balance of the checking account: ";
 			cin>>balance;
 			ClientDatabase.AddAccountChecking(newClient, accountID, balance);
 		}
-		else if (choice == 2)
+		if (choice == 2 || choice == 3)
 		{
 			cout<<"Enter the ID of the savings account: ";
 			cin>>accountID;
-			cout<<"Enter the balance of the savings account: ";
+			cout<<"Enter the initial balance of the savings account: ";
 			cin>>balance;
 			ClientDatabase.AddAccountSavings(newClient, accountID, balance);
 		}
@@ -83,6 +85,53 @@ void addClients()
 	}
 }
 
+//Prints Clients to Screen
+void viewClients()
+{
+	cout<<"============= List Of all Clients In Database ============="<< endl;
+	ClientDatabase.PrintAllAccounts();
+	cout<<"==========================================================="<< endl;
+	system("PAUSE");
+}
+
+void viewCheckAccounts()
+{
+	cout<<"============= List Of all Checking Accounts In Database ============="<< endl;
+    ClientDatabase.PrintAllChecking();
+    cout<<"==========================================================="<< endl;
+    system("PAUSE");
+}
+
+void viewSaveAccounts()
+{
+	cout<<"============= List Of all Savings Accounts In Database ============="<< endl;
+    ClientDatabase.PrintAllSavings();
+    cout<<"==========================================================="<< endl;
+    system("PAUSE");
+}
+
+void transaction()
+{
+	cout<<"============= Select An Account ID To Do a New Transaction ============="<<endl;
+    ClientDatabase.PrintAllAccounts();
+    int TempClientID;
+    cin>>TempClientID;
+    ClientDatabase.HandleTransactionById(TempClientID);
+    cout<<"Transaction completed.";
+    system("PAUSE");
+}
+
+void removeClient()
+{
+	int clientID = 0;
+	cout<<"Enter the ID of the client you want to remove: ";
+	cin>>clientID;
+	ClientDatabase.removeClient(clientID);
+	cout<<"Client removed."<<endl;
+	system("PAUSE");
+	
+}
+
 int main(int argc, char** argv) 
 {
 	//Declare variables
@@ -93,18 +142,18 @@ int main(int argc, char** argv)
 	{
 		choice = mainMenu();
 		
-		switch (choice) //Note: Functions shown have not been implemented yet, return "undeclared" errors
+		switch (choice) 
 		{
 			case 1: addClients(); break;
-			//case 2: viewClients(); break;
-			//case 3: viewCheckAccounts(); break;
-			//case 4: viewSaveAccounts(); break;
-			//case 5: transaction(); break;
+			case 2: viewClients(); break;
+			case 3: viewCheckAccounts(); break;
+			case 4: viewSaveAccounts(); break;
+			case 5: transaction(); break;
 			//case 6: removeClient(); break;
 			case 7: exit (EXIT_SUCCESS); break;
 			default: cout<<"ERROR: Invalid Option.\n";
 		}
-		system("PAUSE"); 
+		//system("PAUSE"); 
 	}
 	return 0;
 }
