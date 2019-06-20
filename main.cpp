@@ -117,7 +117,7 @@ void transaction()
     int TempClientID;
     cin>>TempClientID;
     ClientDatabase.HandleTransactionById(TempClientID);
-    cout<<"Transaction completed.";
+    cout<<"Transaction completed.\n";
     system("PAUSE");
 }
 
