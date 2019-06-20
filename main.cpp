@@ -112,9 +112,10 @@ void viewSaveAccounts()
 
 void transaction()
 {
-	cout<<"============= Select An Account ID To Do a New Transaction ============="<<endl;
+	cout<<"============= Transactions ============="<<endl;
     ClientDatabase.PrintAllAccounts();
     int TempClientID;
+    cout<<"Select an account ID to perform a transaction on: ";
     cin>>TempClientID;
     ClientDatabase.HandleTransactionById(TempClientID);
     cout<<"Transaction completed.\n";
@@ -149,7 +150,7 @@ int main(int argc, char** argv)
 			case 3: viewCheckAccounts(); break;
 			case 4: viewSaveAccounts(); break;
 			case 5: transaction(); break;
-			//case 6: removeClient(); break;
+			case 6: removeClient(); break;
 			case 7: exit (EXIT_SUCCESS); break;
 			default: cout<<"ERROR: Invalid Option.\n";
 		}

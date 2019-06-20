@@ -16,6 +16,8 @@ class Client
 		Client();
 		//Overloaded Constructor
 		Client(string firstName, string lastName, int clientID);
+		//Default destructor
+		~Client() {};
 		//mutators
 		void setName(string fName, string lName);
 		void setID(int ID);

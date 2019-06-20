@@ -5,7 +5,7 @@
 #include "Client.h"
 using namespace std;
 
-//Default construct
+//Default constructor
 Client::Client()
 {
 	firstName = "";
@@ -20,6 +20,7 @@ Client::Client(string fn, string ln, int ID)
 	lastName = ln;
 	clientID = ID;
 }
+
 void Client::setName(string fn, string ln)
 {
 	firstName = fn;

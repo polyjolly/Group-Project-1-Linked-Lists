@@ -174,16 +174,30 @@ void Account_List::removeClient(int Input_ClientID)
 {
 	if(head != NULL)
 	{
-        curr = head;
-        while(curr != NULL)
+		AccountPTR temp1 = head; //Points to current node
+		AccountPTR temp2 = head; //Points to the previous node
+		
+		if(head->User_Account->getAccountID() == Input_ClientID) //If the deleted node is the head
 		{
-			if(curr->User_Account->getAccountID() == Input_ClientID)
+			head = temp1->next;
+			delete temp1;
+		}
+		else
+		{
+			while(temp1 != NULL) //Finds the node to be deleted and points the previous node's next to the node after it
 			{
+				temp1 = temp1->next;
 				
-			}
-            
-			curr = curr->next;
-        }
+				if(temp1->User_Account->getAccountID() == Input_ClientID)
+				{
+					temp2->next = temp1->next;
+					delete temp1;
+					break;
+				}
+				
+				temp2 = temp2->next;
+        	}
+		}
     }
 	else
 	{
